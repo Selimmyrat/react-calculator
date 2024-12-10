@@ -1,0 +1,65 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Calculator styling */
+.calculator {
+  width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Display styling */
+.display {
+  height: 50px;
+  background: #333;
+  color: #fff;
+  text-align: right;
+  padding: 20px;
+  font-size: 1.5rem;
+  border-radius: 10px 10px 0 0;
+}
+
+.display .input {
+  font-size: 1.2rem;
+  color: #bbb;
+}
+
+.display .result {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Buttons styling */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  padding: 10px;
+}
+
+.button {
+  background: #f0f0f0;
+  border: none;
+  font-size: 1.2rem;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: #ddd;
+}
+
+.button:active {
+  background: #bbb;
+}
