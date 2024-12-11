@@ -1,6 +1,6 @@
 import Display from "./Display";
 import Button from "./Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Calculator() {
   const [input, setInput] = useState("");
@@ -22,7 +22,31 @@ export default function Calculator() {
     }
   };
 
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      const key = e.key;
+      if ("1234567890-+*/".includes(key)) {
+        setInput((prev) => prev + key);
+      } else if (key === "Enter") {
+        handleButtonClick("=");
+      } else if (key === "Backspace") {
+        setInput((prev) => prev.slice(0, -1));
+      } else if (key === "Escape") {
+        handleButtonClick("C");
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
+
   const buttons = [
+    "MC",
+    "MR",
+    "M+",
+    "M-",
     "7",
     "8",
     "9",
